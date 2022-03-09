@@ -5,12 +5,23 @@
   background-color: $content-background;
   grid-template-columns: 80% auto;
   min-height: calc(100vh - 50px);
+
+  @media (max-width: "1366px") {
+    grid-template-columns: 100%;
+  }
+
   .content {
     padding: 30px 30px 0 70px;
+    @media (max-width: "768px") {
+      padding: 30px;
+    }
   }
 
   .rightPanel {
     background-color: $accent-background;
     margin-top: 9px;
+    @media (max-width: "1366px") {
+      display: none;
+    }
   }
 }

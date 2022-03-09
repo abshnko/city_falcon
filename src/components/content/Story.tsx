@@ -15,38 +15,49 @@ const Story = ({ story }: StoryProps) => {
 
   const onShowMore = () => setShowMore(!showMore);
   return (
-    <div className={styles.story}>
-      <div className={styles.image}>
-        <img src={story.imageUrls[0]} alt="story-img" />
-      </div>
-      <div className={styles.content}>
-        <div className={styles.title}>{story.title}</div>
-        {showMore && <div className={styles.extra}>{story.description}</div>}
-        <div className={styles.meta}>
-          <div className={styles.icons}>
-            {story.category === "op" ||
-            story.category === "mp" ||
-            story.category === "r" ? (
-              <img
-                src={story.domain_cached_logo_url}
-                className={styles.domainLogo}
-                alt="domain_logo"
-              />
-            ) : (
-              // do twitter logos
-              <>
-                <img src={story.domain_cached_logo_url} alt="person" />
-                <img src={story.domain_cached_logo_url} alt="twitter_logo" />
-              </>
+    <>
+      {story !== null && (
+        <div className={styles.story}>
+          <div className={styles.image}>
+            {story.imageUrls !== null && (
+              <img src={story.imageUrls[0]} alt="story-img" />
             )}
           </div>
-          <div className={styles.source}>{story.domain_name}</div>
-          <div className={styles.timestamp}>{d}</div>
-        </div>
-      </div>
-      <div className={styles.scoreContainer}>
-        <div
-          className={`
+          <div className={styles.content}>
+            <div className={styles.title}>
+              <a href={story.url}> {story.title}</a>
+            </div>
+            {showMore && (
+              <div className={styles.extra}>{story.description}</div>
+            )}
+            <div className={styles.meta}>
+              <div className={styles.icons}>
+                {story.category === "op" ||
+                story.category === "mp" ||
+                story.category === "r" ? (
+                  <img
+                    src={story.domain_cached_logo_url}
+                    className={styles.domainLogo}
+                    alt="domain_logo"
+                  />
+                ) : (
+                  // do twitter logos
+                  <>
+                    <img src={story.domain_cached_logo_url} alt="person" />
+                    <img
+                      src={story.domain_cached_logo_url}
+                      alt="twitter_logo"
+                    />
+                  </>
+                )}
+              </div>
+              <div className={styles.source}>{story.domain_name}</div>
+              <div className={styles.timestamp}>{d}</div>
+            </div>
+          </div>
+          <div className={styles.scoreContainer}>
+            <div
+              className={`
           ${
             story.score < 20
               ? styles.scoreRed
@@ -54,14 +65,16 @@ const Story = ({ story }: StoryProps) => {
               ? styles.scoreYellow
               : styles.scoreGreen
           } ${styles.score}`}
-        >
-          {story.score}%
+            >
+              {story.score}%
+            </div>
+          </div>
+          <button className={styles.moreButton} onClick={onShowMore}>
+            <FontAwesomeIcon icon={faChevronDown} />
+          </button>
         </div>
-      </div>
-      <button className={styles.moreButton} onClick={onShowMore}>
-        <FontAwesomeIcon icon={faChevronDown} />
-      </button>
-    </div>
+      )}
+    </>
   );
 };
 

@@ -9,11 +9,14 @@ interface HeaderProps {
 }
 
 const Header = ({ setShowFilters }: HeaderProps) => {
+  const onRefresh = () => {
+    window.location.reload();
+  };
   return (
     <div className="content-header">
       <h1 className={styles.title}>Watchlist Name</h1>
       <div className={styles.buttons}>
-        <button className={styles.button}>
+        <button className={styles.button} onClick={onRefresh}>
           <FontAwesomeIcon className={styles.icon} icon={faArrowRotateRight} />
           <span className={styles.text}>Refresh</span>
         </button>

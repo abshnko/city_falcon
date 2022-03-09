@@ -3,4 +3,7 @@
 .header {
   background-color: $header-background;
   height: 50px;
+  .logo {
+    margin: 4px 0 3px 20px;
+  }
 }

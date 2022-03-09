@@ -15,7 +15,7 @@ const Stories = ({ stories }: StoriesProps) => {
   return (
     <div className={styles.stories}>
       {stories.map((story) => {
-        return <Story story={story} />;
+        return <Story key={story.publishTime} story={story} />;
       })}
     </div>
   );

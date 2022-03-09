@@ -7,6 +7,7 @@ export interface IStory {
   publishTime: string;
   score: number;
   description: string;
+  url: string;
 }
 
 export interface StoriesProps {
