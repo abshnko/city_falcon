@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Filters from "../Filters";
-import Stories from "../Stories";
+import Filters from "../Filters/Filters";
+import Stories from "../Stories/Stories";
 import styles from "./WatchlistContent.module.scss";
-import Header from "../WatchlistHeader";
+import Header from "../WatchlistHeader/WatchlistHeader";
 
 const WatchlistContent = () => {
   const [showFilters, setShowFilters] = useState<boolean>(false);

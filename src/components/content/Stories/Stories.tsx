@@ -1,7 +1,7 @@
 import React from "react";
-import Story from "./Story";
+import Story from "../Story/Story";
 import styles from "./Stories.module.scss";
-import { StoriesProps } from "../../types";
+import { StoriesProps } from "../../../types";
 
 // interface IStory {
 //   imageUrls: string[];

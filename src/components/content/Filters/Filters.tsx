@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Filters.module.scss";
-import { getAll } from "../../api/apiCalls";
+import { getAll } from "../../../api/apiCalls";
 
 interface FiltersProps {
   setStories: any;

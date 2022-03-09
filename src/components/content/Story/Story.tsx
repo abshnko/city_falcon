@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Story.module.scss";
-import { IStory } from "../../types";
+import { IStory } from "../../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
